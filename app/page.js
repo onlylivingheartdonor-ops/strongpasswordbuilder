@@ -31,20 +31,18 @@ export default function Page() {
   }
 
   return (
-    <main
-      style={{
-        maxWidth: "900px",
-        margin: "0 auto",
-        padding: "2rem",
-        background: "#f4f6fb",
-        minHeight: "100vh",
-        fontFamily: "system-ui, -apple-system, sans-serif"
-      }}
-    >
+    <main style={{
+      maxWidth: "900px",
+      margin: "0 auto",
+      padding: "2rem",
+      background: "#f4f6fb",
+      minHeight: "100vh",
+      fontFamily: "system-ui, -apple-system, sans-serif"
+    }}>
+
       {/* TOOL */}
       <div style={{ background: "#fff", padding: "1.5rem", borderRadius: "10px", marginBottom: "1.5rem" }}>
         <h1>Strong Password Builder</h1>
-
         <p>Create secure, random passwords instantly.</p>
 
         <label>Password Length</label>
@@ -72,7 +70,7 @@ export default function Page() {
         {password && (
           <div style={{ marginTop: "1.5rem" }}>
             <strong>Password:</strong>
-            <div style={{ background: "#eee", padding: "10px", borderRadius: "5px" }}>
+            <div style={{ background: "#eee", padding: "10px", borderRadius: "5px", wordBreak: "break-all" }}>
               {password}
             </div>
           </div>
@@ -83,7 +81,7 @@ export default function Page() {
       <div style={{ background: "#fff", padding: "1.5rem", borderRadius: "10px", marginBottom: "1.5rem" }}>
         <h2>How This Works</h2>
         <p>
-          This tool generates random passwords using your selected character types. 
+          This tool generates random passwords based on your selected options. 
           Longer passwords with a mix of uppercase, lowercase, numbers, and symbols are more secure.
         </p>
       </div>
@@ -92,27 +90,29 @@ export default function Page() {
       <div style={{ background: "#fff", padding: "1.5rem", borderRadius: "10px", marginBottom: "1.5rem" }}>
         <h2>Related Tools</h2>
         <ul>
-          <li onClick={() => window.location.href = "https://creditcarddebtpayoffcalculator.com"}>Credit Card Debt Payoff Calculator</li>
-          <li onClick={() => window.location.href = "https://debtreducingcalculator.com"}>Debt Reducing Calculator</li>
-          <li onClick={() => window.location.href = "https://sidehustletaxestimator.com"}>Side Hustle Tax Estimator</li>
-          <li onClick={() => window.location.href = "https://highyieldsavingscalculator.com"}>High Yield Savings Calculator</li>
-          <li onClick={() => window.location.href = "https://retirementsavingsgap.com"}>Retirement Savings Gap</li>
-          <li onClick={() => window.location.href = "https://lifeinsurancecoveragecalculator.com"}>Life Insurance Coverage Calculator</li>
-          <li onClick={() => window.location.href = "https://onlinecourseroi.com"}>Online Course ROI Calculator</li>
-          <li onClick={() => window.location.href = "https://mysubscriptioncost.com"}>Subscription Cost Calculator</li>
-          <li onClick={() => window.location.href = "https://emailattachmentsize.com"}>Email Attachment Size Checker</li>
-          <li onClick={() => window.location.href = "https://gpacalculator.site"}>GPA Calculator</li>
-          <li onClick={() => window.location.href = "https://youtubetitlechecker.com"}>YouTube Title Checker</li>
-          <li onClick={() => window.location.href = "https://strongpasswordbuilder.com"}>Strong Password Builder</li>
-          <li onClick={() => window.location.href = "https://coolusernamegenerator.com"}>Cool Username Generator</li>
+          <li onClick={()=>window.location.href="https://creditcarddebtpayoffcalculator.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Credit Card Debt Payoff Calculator</li>
+          <li onClick={()=>window.location.href="https://debtreducingcalculator.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Debt Reducing Calculator</li>
+          <li onClick={()=>window.location.href="https://sidehustletaxestimator.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Side Hustle Tax Estimator</li>
+          <li onClick={()=>window.location.href="https://highyieldsavingscalculator.com"} style={{cursor:"pointer",textDecoration:"underline"}}>High Yield Savings Calculator</li>
+          <li onClick={()=>window.location.href="https://retirementsavingsgap.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Retirement Savings Gap</li>
+          <li onClick={()=>window.location.href="https://lifeinsurancecoveragecalculator.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Life Insurance Coverage Calculator</li>
+          <li onClick={()=>window.location.href="https://onlinecourseroi.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Online Course ROI Calculator</li>
+          <li onClick={()=>window.location.href="https://mysubscriptioncost.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Subscription Cost Calculator</li>
+          <li onClick={()=>window.location.href="https://emailattachmentsize.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Email Attachment Size Checker</li>
+          <li onClick={()=>window.location.href="https://gpacalculator.site"} style={{cursor:"pointer",textDecoration:"underline"}}>GPA Calculator</li>
+          <li onClick={()=>window.location.href="https://youtubetitlechecker.com"} style={{cursor:"pointer",textDecoration:"underline"}}>YouTube Title Checker</li>
+          <li onClick={()=>window.location.href="https://strongpasswordbuilder.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Strong Password Builder</li>
+          <li onClick={()=>window.location.href="https://coolusernamegenerator.com"} style={{cursor:"pointer",textDecoration:"underline"}}>Cool Username Generator</li>
         </ul>
       </div>
 
       {/* FOOTER */}
       <div style={{ fontSize: "0.9rem" }}>
-        <span onClick={() => window.location.href = "/privacy"}>Privacy Policy</span> |{" "}
-        <span onClick={() => window.location.href = "/terms"}>Terms of Service</span>
+        <span onClick={()=>window.location.href="/privacy"} style={{cursor:"pointer",textDecoration:"underline"}}>Privacy Policy</span>{" "}
+        |{" "}
+        <span onClick={()=>window.location.href="/terms"} style={{cursor:"pointer",textDecoration:"underline"}}>Terms of Service</span>
       </div>
+
     </main>
   )
 }
