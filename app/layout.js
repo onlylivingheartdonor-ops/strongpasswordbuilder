@@ -2,8 +2,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>TOOL TITLE</title>
-        <meta name="description" content="TOOL DESCRIPTION" />
+        <title>Strong Password Builder</title>
+        <meta name="description" content="Generate secure, strong passwords instantly." />
 
         <script
           async
