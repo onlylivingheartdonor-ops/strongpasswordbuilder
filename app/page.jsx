@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useCallback } from "react"
-import { RELATED_LINKS as RELATED } from "./lib/links"
 
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&display=swap');
@@ -83,6 +82,22 @@ const CHAR_SETS = [
   { key: "symbols", label: "Symbols",    chars: "!@#$%^&*()_+[]{}?",          preview: "!@#…" },
 ]
 
+const RELATED = [
+  { label: "Credit Card Debt Payoff Calculator",  href: "https://creditcarddebtpayoffcalculator.com" },
+  { label: "Debt Reducing Calculator",            href: "https://debtreducingcalculator.com" },
+  { label: "Side Hustle Tax Estimator",           href: "https://sidehustletaxestimator.com" },
+  { label: "High Yield Savings Calculator",       href: "https://highyieldsavingscalculator.com" },
+  { label: "Retirement Savings Gap",              href: "https://retirementsavingsgap.com" },
+  { label: "Life Insurance Coverage Calculator",  href: "https://lifeinsurancecoveragecalculator.com" },
+  { label: "Online Course ROI Calculator",        href: "https://onlinecourseroi.com" },
+  { label: "Subscription Cost Calculator",        href: "https://mysubscriptioncost.com" },
+  { label: "Email Attachment Size Checker",       href: "https://emailattachmentsize.com" },
+  { label: "GPA Calculator",                      href: "https://gpacalculator.site" },
+  { label: "YouTube Title Checker",               href: "https://youtubetitlechecker.com" },
+  { label: "Strong Password Builder",             href: "https://strongpasswordbuilder.com" },
+  { label: "Cool Username Generator",             href: "https://coolusernamegenerator.com" },
+]
+
 function calcEntropy(length, poolSize) {
   if (!poolSize || !length) return 0
   return Math.round(length * Math.log2(poolSize))
@@ -97,9 +112,9 @@ function getStrength(entropy) {
 }
 
 function colorChar(ch) {
-  if (/[A-Z]/.test(ch)) return '<span style="color:#1a5ca8">' + ch + '</span>'
-  if (/[0-9]/.test(ch)) return '<span style="color:#c84b1f">' + ch + '</span>'
-  if (/[^a-zA-Z0-9]/.test(ch)) return '<span style="color:#2d6a4f">' + ch + '</span>'
+  if (/[A-Z]/.test(ch)) return `<span style="color:#1a5ca8">${ch}</span>`
+  if (/[0-9]/.test(ch)) return `<span style="color:#c84b1f">${ch}</span>`
+  if (/[^a-zA-Z0-9]/.test(ch)) return `<span style="color:#2d6a4f">${ch}</span>`
   return ch
 }
 
@@ -174,7 +189,7 @@ export default function Page() {
             {CHAR_SETS.map(s => (
               <div
                 key={s.key}
-                className={"spb-check-item" + (active[s.key] ? " on" : "")}
+                className={`spb-check-item${active[s.key] ? " on" : ""}`}
                 onClick={() => toggleSet(s.key)}
               >
                 <div className="spb-check-box" />
@@ -297,18 +312,7 @@ export default function Page() {
           </div>
         </div>
 
-        {/* ========== MONEYWISE LINK — START ========== */}
-        <div style={{ background: "#fff", border: "1px solid #e0dbd3", borderRadius: "4px", padding: "1rem 1.5rem", marginBottom: "1.5rem", textAlign: "center" }}>
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#888" }}>
-            Looking for more free financial tools?{" "}
-            <a href="https://moneywisecalculator.com" style={{ color: "#b45309", textDecoration: "underline" }}>
-              Visit MoneyWiseCalculator.com
-            </a>
-          </p>
-        </div>
-        {/* ========== MONEYWISE LINK — END ========== */}
-
-        {/* RELATED */}
+        {/* RELATED TOOLS */}
         <div className="spb-card">
           <p className="spb-section-title">Related tools</p>
           <div className="spb-related-links">
@@ -317,7 +321,7 @@ export default function Page() {
             ))}
           </div>
           <div className="spb-disclaimer">
-            This tool provides estimates for informational purposes only and does not constitute financial advice. Results assume a fixed interest rate and fixed monthly payment for the full repayment period. This site may use cookies and analytics. By using this site, you agree to our Privacy Policy and Terms of Service.
+            Passwords are generated entirely in your browser. Nothing is transmitted or stored. This tool uses your browser&apos;s built-in pseudorandom number generator.
             <div className="spb-footer-links">
               <a href="/privacy">Privacy Policy</a>
               <a href="/terms">Terms of Service</a>
