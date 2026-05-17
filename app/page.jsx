@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { RELATED_LINKS as RELATED } from "./lib/links"
 
 const css = `
@@ -83,8 +83,6 @@ const CHAR_SETS = [
   { key: "symbols", label: "Symbols",    chars: "!@#$%^&*()_+[]{}?",          preview: "!@#…" },
 ]
 
-import { RELATED_LINKS as RELATED } from "./lib/links"
-
 function calcEntropy(length, poolSize) {
   if (!poolSize || !length) return 0
   return Math.round(length * Math.log2(poolSize))
@@ -99,9 +97,9 @@ function getStrength(entropy) {
 }
 
 function colorChar(ch) {
-  if (/[A-Z]/.test(ch)) return `<span style="color:#1a5ca8">${ch}</span>`
-  if (/[0-9]/.test(ch)) return `<span style="color:#c84b1f">${ch}</span>`
-  if (/[^a-zA-Z0-9]/.test(ch)) return `<span style="color:#2d6a4f">${ch}</span>`
+  if (/[A-Z]/.test(ch)) return '<span style="color:#1a5ca8">' + ch + '</span>'
+  if (/[0-9]/.test(ch)) return '<span style="color:#c84b1f">' + ch + '</span>'
+  if (/[^a-zA-Z0-9]/.test(ch)) return '<span style="color:#2d6a4f">' + ch + '</span>'
   return ch
 }
 
@@ -176,7 +174,7 @@ export default function Page() {
             {CHAR_SETS.map(s => (
               <div
                 key={s.key}
-                className={`spb-check-item${active[s.key] ? " on" : ""}`}
+                className={"spb-check-item" + (active[s.key] ? " on" : "")}
                 onClick={() => toggleSet(s.key)}
               >
                 <div className="spb-check-box" />
@@ -311,16 +309,16 @@ export default function Page() {
         {/* ========== MONEYWISE LINK — END ========== */}
 
         {/* RELATED */}
-        <div className="dr-card">
-          <p className="dr-section-title">Related tools</p>
-          <div className="dr-related-links">
+        <div className="spb-card">
+          <p className="spb-section-title">Related tools</p>
+          <div className="spb-related-links">
             {RELATED.map((r, i) => (
-              <a key={i} className="dr-related-link" href={r.href}>{r.label}</a>
+              <a key={i} className="spb-related-link" href={r.href}>{r.label}</a>
             ))}
           </div>
-          <div className="dr-disclaimer">
+          <div className="spb-disclaimer">
             This tool provides estimates for informational purposes only and does not constitute financial advice. Results assume a fixed interest rate and fixed monthly payment for the full repayment period. This site may use cookies and analytics. By using this site, you agree to our Privacy Policy and Terms of Service.
-            <div className="dr-footer-links">
+            <div className="spb-footer-links">
               <a href="/privacy">Privacy Policy</a>
               <a href="/terms">Terms of Service</a>
             </div>
