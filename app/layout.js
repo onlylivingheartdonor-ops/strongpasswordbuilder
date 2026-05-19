@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "Strong Password Builder | Keep Your Files and Information Safe",
     description: "Generate ultra-secure passwords in seconds. Customize length, symbols, and strength to keep your accounts safe from hackers.",
-    url: "https:/www.strongpasswordbuilder.com",                 // ← MUST CHANGE
+    url: "https://www.strongpasswordbuilder.com",                 // ← MUST CHANGE
     siteName: "Moneywise Calculators",             // ← Change
     images: [
       {
