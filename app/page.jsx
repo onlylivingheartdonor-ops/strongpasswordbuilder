@@ -155,7 +155,35 @@ export default function Page() {
             <p>Using a unique strong password for every account also limits the damage when a data breach occurs. If one service is compromised, none of your other accounts are at risk.</p>
           </div>
         </div>
-
+        {/* REAL-WORLD EXAMPLE */}
+        <div className="spb-card">
+          <p className="spb-section-title">Real-world example: Time to crack common passwords</p>
+          <div className="spb-prose">
+            <p>How long would it take an attacker to crack different password types? These estimates assume offline cracking on standard hardware.</p>
+          </div>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "1rem" }}>
+            <div style={{ background: "#fff1f2", padding: "1rem", borderRadius: "4px", border: "1px solid #fcd4d4" }}>
+              <p style={{ fontSize: "12px", fontWeight: "500", color: "#b91c1c", marginBottom: ".5rem" }}>❌ Weak passwords</p>
+              <p style={{ fontSize: "13px", color: "#444", marginBottom: ".5rem" }}><strong>"password123"</strong> → Instant</p>
+              <p style={{ fontSize: "13px", color: "#444", marginBottom: ".5rem" }}><strong>"Qwerty2024"</strong> → Minutes</p>
+              <p style={{ fontSize: "13px", color: "#444", marginBottom: ".5rem" }}><strong>"Fido2024!"</strong> → Hours</p>
+              <p style={{ fontSize: "13px", color: "#b91c1c", fontWeight: "500", marginTop: ".5rem" }}>These are the first passwords attackers try.</p>
+            </div>
+            
+            <div style={{ background: "#f0fdf4", padding: "1rem", borderRadius: "4px", border: "1px solid #b7d9c8" }}>
+              <p style={{ fontSize: "12px", fontWeight: "500", color: "#166534", marginBottom: ".5rem" }}>✅ Strong passwords</p>
+              <p style={{ fontSize: "13px", color: "#444", marginBottom: ".5rem" }}><strong>16 random chars (a-z, A-Z, 0-9, symbols)</strong> → 50+ centuries</p>
+              <p style={{ fontSize: "13px", color: "#444", marginBottom: ".5rem" }}><strong>20 random lowercase letters</strong> → 50+ centuries</p>
+              <p style={{ fontSize: "13px", color: "#166534", fontWeight: "500", marginTop: ".5rem" }}>These cannot be cracked by brute force — use this tool to generate them.</p>
+            </div>
+          </div>
+          
+          <div style={{ marginTop: "1rem", padding: "1rem", background: "#f5f3ef", borderRadius: "4px" }}>
+            <p style={{ fontSize: "13px", color: "#1a1a1a", fontWeight: "500", marginBottom: ".25rem" }}>The bottom line:</p>
+            <p style={{ fontSize: "13px", color: "#444" }}>The difference between a weak and strong password is <strong>5 minutes of effort</strong> — but the security difference is measured in centuries of cracking time. Use this tool to generate passwords that are impossible to guess and impossible to crack.</p>
+          </div>
+        </div>
         {/* BEST PRACTICES */}
         <div className="spb-card">
           <p className="spb-section-title">Best practices for managing passwords</p>
